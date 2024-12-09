@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Crack C++ Using Termux</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Tambahkan gaya CSS yang telah dibahas sebelumnya di sini */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: linear-gradient(to right, #3a6073, #3a9c9f);
+            color: #333;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+            color: #ffcc00; /* Hover color */
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50; /* Darker blue */
+        }
+
+        h2 {
+            color: #2980b9; /* Blue color */
+            margin-top: 2rem;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s, opacity 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            opacity: 0.9;
+        }
+
+        .scrollable-pre {
+            max-height: 300px; /* Maximum height for the box */
+            overflow-y: auto;  /* Add scroll if necessary */
+            background-color: #f8f9fa; /* Background color for the box */
+            border: 1px solid #ddd; /* Border line */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px; /* Inner spacing */
+            white-space: pre-wrap; /* Allow wrapping */
+            word-wrap: break-word; /* Break long words */
+        }
+
+        button {
+            background-color: #2980b9; /* Blue color */
+            color: white;
+            border: none;
+            padding: 6px 12px; /* Button size */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px; /* Font size adjustment */
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1f669d; /* Darker blue on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Memeriksa status login
+        if (localStorage.getItem('loggedIn') !== 'true') {
+            window.location.href = 'login.html'; // Arahkan ke halaman login jika belum login
+        }
+    </script>
+    <nav>
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#materials">Required Materials</a></li>
+            <li><a href="#install">Install Radare2</a></li> <!-- Tambahkan tautan ke bagian install -->
+            <li><a href="#method1">Method 1</a></li>
+            <li><a href="#method2">Method 2</a></li>
+            <li><a href="#additional">Additional Resources</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Tutorial Crack C++ (Library) Using Termux</h1>
+        <p>By: @AMELLEL3</p>
+        <div class="credit">
+            <p>CREATED BY BIDZZ OFFICIAL 🇮🇩</p>
+        </div>
+    </header>
+    <main>
+        <section id="intro">
+            <h2>Introduction</h2>
+            <p>In this tutorial, we will learn how to crack C++ libraries using Termux on your Android device. Follow the steps carefully.</p>
+        </section>
+        <section id="materials">
+            <h2>Required Materials</h2>
+            <p>Before starting, make sure you have the following applications installed:</p>
+            <ul>
+                <li>
+                    <strong>Termux:</strong> 
+                    <a href="https://f-droid.org/id/packages/com.termux/" target="_blank">
+                        <button>Download</button>
+                    </a>
+                </li>
+                <li>
+                    <strong>MT Manager:</strong> 
+                    <a href="https://t.me/CheatByBidzz/1969" target="_blank">
+                        <button>Download</button>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section id="install">
+            <h2>Cara Install Radare2 untuk Pertama Kalinya</h2>
+            <p>Untuk menginstal Radare2, lakukan langkah-langkah berikut:</p>
+            <div class="scrollable-pre">
+                <pre>
+1. Buka Termux di perangkat Anda.
+2. Jalankan perintah berikut untuk memperbarui dan mengupgrade paket:
+   pkg update -y
+   pkg upgrade -y
+
+3. Instal Radare2 dengan perintah:
+   <strong>pkg install radare2</strong> <!-- Mengganti dengan perintah yang benar -->
+
+4. Setelah instalasi selesai, Anda dapat mulai menggunakan Radare2.
+                </pre>
+            </div>
+            <p><strong>NOTE:</strong> Oh iya, itu ada yang salah, di video seharusnya <code>pkg install radare2</code>, bukan <code>pkg install r2</code>.</p>
+            <p>Untuk melihat video cara install, klik link berikut:</p>
+            <p>
+                <strong>
+                    <a href="https://t.me/reqcrackbybidzz/12250" target="_blank">
+                        <button>VIDEO TUTORIAL</button>
+                    </a>
+                </strong>
+            </p>
+        </section>
+        <section id="method1">
+            <h2>Method 1: Steps to Crack</h2>
+            <pre>
+1. Update and upgrade packages:
+   pkg update -y
+   pkg upgrade -y
+
+2. Install Radare2:
+   pkg install radare2
+
+3. Navigate to your storage:
+   cd /sdcard
+   ls
+
+4. Create a writable file:
+   r2 -w > yourfile.txt
+
+5. Start the analysis:
+   Izz > yourfile.txt
+   aaa
+
+6. If needed, analyze functions:
+   Afl > yourfile.txt
+
+7. Generate a PDF report:
+   pdf > yourfile.txt
+
+8. If PDF does not work, use:
+   pdr > yourfile.txt
+            </pre>
+        </section>
+        <section id="method2">
+            <h2>Method 2: Radare2 Commands</h2>
+            <p>Open the editor and run the r2 command on the saved document:</p>
+            <div class="scrollable-pre">
+                <pre>
+| '-' '.-' '. -'  These three commands do the same thing.
+| -8 is equivalent to s-8, but shorter to type (see command +?)
+| -a x86 is equivalent to r2 -a x86 or e asm.arch=x86
+| -A[?] is equivalent to r2 -A or aaa
+| -b 32 is equivalent to e or r2 -e
+| -c cpu is equivalent to r2 -e asm.cpu=
+| -ek=v is equivalent to r2 -b or e asm.bits
+| -h displays this help (same as -?)
+| -H key is equivalent to r2 -H
+| -k kernel is equivalent to r2 -k or e asm.os
+| -f block size = file size (b $s)
+| -j enters js: repl
+| -i [file] is equivalent to . [file], to run the script
+| -s [address] is equivalent to r2 -e asm.cpu=
+| -L is equivalent to Lo (or r2 -L)
+| -p project is equivalent to 'P [project name]' to load the project
+| -P patchfile applies the provided patch file (see doc/rapatch2.md)
+| -v is equivalent to -V
+| -V shows r2 version, same as ?V
+| -- searches one block back. Same as s-- (see command b)
+                </pre>
+            </div>
+            <p>These are some Radare2 commands I know. Please correct me if I'm wrong.</p>
+        </section>
+        <section id="additional">
+            <h2>Additional Resources</h2>
+            <p>For more detailed instructions, check out our tutorial link:</p>
+            <p>
+                <strong>
+                    <a href="https://t.me/reqcrackbybidzz/11968" target="_blank">
+                        <button>VIDEO TUTORIAL</button>
+                    </a>
+                </strong>
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; BY BIDZZ OFFICIAL 🇮🇩</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
